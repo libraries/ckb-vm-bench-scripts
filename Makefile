@@ -12,6 +12,10 @@ $(SECP256K1_BENCH_BIN): c/secp256k1_bench.c c/sha3.h $(SECP256K1_LIB)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
 	$(DUMP) -d $@ > $@_dump.txt
 
+build/secp256k1_bench_loop: c/secp256k1_bench_loop.c c/sha3.h $(SECP256K1_LIB)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
+	$(DUMP) -d $@ > $@_dump.txt
+
 build/schnorr_bench: c/schnorr_bench.c c/sha3.h $(SECP256K1_LIB)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
 	$(DUMP) -d $@ > $@_dump.txt
